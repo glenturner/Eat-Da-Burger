@@ -7,6 +7,10 @@
         <li>
             <p>ID: {{this.id}}</p>
             <p>eat: {{this.burger}}</p>
+            <form action="/delete?"_method="DELETE" method="POST">
+                <input type="hidden" name="id" value="{{this.id}}">
+                <button type="submit">DELETE</button>
+            </form>
         </li>
     {{/each}}
 </ul>
@@ -21,3 +25,4 @@
 
     <button type="submit">Submit</button>
 </form>
+
