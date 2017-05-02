@@ -32,4 +32,11 @@ router.put('/burgers/update/:id', function(req, res){
     });
 });
 
+router.delete('/burgers/delete/:id', function(req,res){
+    var condition = 'id = ' + req.params.id;
+    burgers.delete(condition, function (){
+        res.redirect("/")
+    })
+})
+
 module.exports = router;
