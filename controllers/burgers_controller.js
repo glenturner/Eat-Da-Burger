@@ -10,7 +10,7 @@ router.get('/burgers', function(req, res){
     burgers.all(function(data){
         var hbsObject = {burgers: data};
 
-        console.log(hbsObject);
+        console.log("Hbs Object" + hbsObject);
 
         res.render('index', hbsObject);
     });

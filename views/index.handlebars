@@ -1,10 +1,38 @@
-<h1>Eat-Da-Burger</h1>
 
-<div class="container">
-    <div class="jumbotron">
-        <img src="/assets/images/burger-outline-filled.png">
-        <h1> Eat-Da-Burger! </h1>
+<nav class= "navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand fa fa-bars fa-2x"> SMASH BURGER</a>
+
+
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="http://burgerbeast.com">Burger Blog</a></li>
+                <li><a href="https://github.com/glenturner/Friend-Finder">GitHub</a></li>
+            </ul>
+        </div>
     </div>
+</nav>
+<br><br><br><br>
+<style>body{
+    background-image: url(../assets/images/burger_bg.jpg);
+}
+h3{
+    color:black;
+    font: 36px;
+
+}
+.form-control {
+    width: 37%;
+}</style>
 
     {{!-- burger list before being eaten --}}
     <div class="row">
@@ -19,7 +47,7 @@
                                     <span class="input-group-btn">
 								<form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
 									<input type="hidden" name="devoured" value="true">
-									<button class="btn btn-default btn-lg" type="submit"> EAT IT! </button>
+									<button class="btn btn-success btn-lg" type="submit">SMASH IT!</button>
 								</form>
 							</span>
                                 </div>
@@ -49,16 +77,16 @@
         </div>
 
         <div class="col-md-10 col-md-offset-1">
-            <p class="lead"> Enter the name of the burger you want to eat & click the submit button. </p>
+            <h3 class="lead"><strong>CREATE YOUR BURGER AND SMASH IT!</strong></h3>
 
             {{!-- section to add burgers --}}
             <form class="create-update-form" action="burgers/create" method="POST">
 
                 <div class="form-group">
-                    <textarea class="form-control input-lg" type="text" name="b_name" rows="3"> </textarea>
+                    <textarea class="form-control input-sm" type="text" name="b_name" rows="3"> </textarea>
                 </div>
 
-                <button class="btn btn-default btn-lg" type="submit">Add Burger!</button>
+                <button class="btn btn-warning btn-lg" type="submit">Create Burger</button>
             </form>
         </div>
     </div>

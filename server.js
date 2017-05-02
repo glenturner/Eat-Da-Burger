@@ -11,6 +11,8 @@ var port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 
+//Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static(process.cwd() + '/public'));
 
 var exHandlebars = require("express-handlebars");
 
