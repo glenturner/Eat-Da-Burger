@@ -67,12 +67,17 @@ h3{
                         {{#each burgers}}
                             {{#if this.devoured}}
                                 <li class="list-group-item">
+                                    <div class="input-group">
+                                    <p class="lead">{{this.burger_name}} </p>
+                                        <span class="input-group-btn">
                                     <form action="burgers/delete/{{this.id}}?_method=DELETE" method="POST">
                                         <input type="hidden" name="id" value="{{this.id}}">
                                         <button class="btn btn-danger btn-lg">Delete</button>
                                     </form>
-                                    <p class="lead">{{this.burger_name}} </p>
                                 </li>
+                            </span>
+                            </div>
+
                             {{/if}}
                         {{/each}}
                     </ul>
