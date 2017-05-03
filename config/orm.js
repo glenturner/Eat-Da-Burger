@@ -1,4 +1,5 @@
 var connection = require('../config/connection.js');
+var colors = require('colors');
 
 function printQuestionMarks(num){
     var arr = [];
@@ -28,6 +29,8 @@ var orm = {
         connection.query(queryString, function(err, result){
             if(err) throw err;
             cb(result);
+            // Testing/Debugging //
+            console.log(colors.inverse.green("ORM RESULT ALL: " + JSON.stringify(result)));
         });
     },
     create: function(table, col, vals, cb){
@@ -42,6 +45,7 @@ var orm = {
         connection.query(queryString, vals, function(err, result){
             if(err) throw err;
             cb(result);
+            console.log(colors.inverse.green("ORM RESULT CREATE: " + JSON.stringify(result)));
         });
     },
     update: function(table, objColVals, condition, cb){
@@ -51,22 +55,24 @@ var orm = {
         queryString = queryString + ' WHERE ';
         queryString = queryString + condition;
 
-        console.log(queryString);
+        console.log(colors.inverse.green(queryString));
 
         connection.query(queryString, function(err, result){
             if(err) throw err;
             cb(result);
+            console.log(colors.inverse.green("ORM RESULT UPDATE: " + JSON.stringify(result)));
         });
     },
     delete: function (table, condition, cb){
         var queryString = 'DELETE FROM ' + table;
         queryString = queryString + ' WHERE ';
         queryString =  queryString + condition;
-        console.log(queryString);
+        console.log(colors.inverse.green(queryString));
 
         connection.query(queryString, function(err, result){
             if (err) throw err;
             cb(result);
+            console.log(colors.inverse.green("ORM RESULT DELETE: " + JSON.stringify(result)));
 
         });
     }
