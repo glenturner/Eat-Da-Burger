@@ -9,8 +9,10 @@ router.get('/', function(req, res){
 router.get('/burgers', function(req, res){
     burgers.all(function(data){
         var hbsObject = {burgers: data};
+        // Testing/Debugging //
+        console.log("This is controller data " + data);
 
-        console.log("Hbs Object" + hbsObject);
+        console.log("Controller Hbs Object" + JSON.stringify(hbsObject));
 
         res.render('index', hbsObject);
     });
@@ -19,6 +21,8 @@ router.get('/burgers', function(req, res){
 router.post('/burgers/create', function(req, res){
     burgers.create(['burger_name'], [req.body.b_name], function(data){
         res.redirect('/burgers');
+        // Testing/Debugging //
+        console.log("This is req.body.b_name: " + req.body.b_name);
     });
 });
 
@@ -40,3 +44,5 @@ router.delete('/burgers/delete/:id', function(req,res){
 });
 
 module.exports = router;
+
+
