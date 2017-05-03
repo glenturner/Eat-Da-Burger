@@ -28,7 +28,9 @@
 h3{
     color:black;
     font: 36px;
-
+}
+.glyphicon {
+    margin-right: 10px;
 }
 .form-control {
     width: 37%;
@@ -71,7 +73,8 @@ h3{
                                         <span class="input-group-btn">
                                     <form action="burgers/delete/{{this.id}}?_method=DELETE" method="POST">
                                         <input type="hidden" name="id" value="{{this.id}}">
-                                        <button class="btn btn-danger btn-lg">Delete</button>
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                        <button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-trash"></span>Trash</button>
                                     </form>
                                 </li>
                             </span>
