@@ -32,6 +32,7 @@ h3{
 .glyphicon {
     margin-right: 10px;
 }
+
 .form-control {
     width: 37%;
 }</style>
@@ -70,11 +71,10 @@ h3{
                             {{#if this.devoured}}
                                 <li class="list-group-item">
                                     <p class="lead">{{this.burger_name}} </p>
-                                        <span class="input-group-btn">
+                                        <span class="input-group-trash">
                                     <form action="burgers/delete/{{this.id}}?_method=DELETE" method="POST">
                                         <input type="hidden" name="id" value="{{this.id}}">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                        <button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-trash"></span>Trash</button>
+                                        <button type="submit" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-trash"></span>Trash</button>
                                     </form>
                                 </li>
                             </span>
