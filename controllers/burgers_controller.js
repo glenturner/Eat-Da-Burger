@@ -6,7 +6,8 @@ var colors = require('colors');
 router.get('/', function(req, res){
     res.redirect('/burgers')
 });
-
+// Land on endpoint /burgers function will initialize ORM ALL function which will enter callback hell
+// // Create routes render page with all objects from burgers table in burgers_db
 router.get('/burgers', function(req, res){
     burgers.all(function(data){
         var hbsObject = {burgers: data};

@@ -18,7 +18,10 @@ function objToSql(ob){
     for (var key in ob) {
         arr.push(key + '=' + ob[key]);
     };
-
+    // Testing/Debugging //
+        console.log(colors.inverse.green("ORM This is ob" + JSON.stringify(ob)));
+    // Testing/Debugging //
+    console.log(colors.inverse.green("ORM This is arr " + (arr)));
     return arr.toString();
 };
 
